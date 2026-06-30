@@ -1,0 +1,2 @@
+import { useUiStore } from '../store/uiStore';
+export default function SettingsPage(){ const { darkMode,toggleDarkMode }=useUiStore(); return <div className="card space-y-4"><h1 className="text-2xl font-bold">Settings</h1><p className="text-sm text-slate-500">API URL aktif: {import.meta.env.VITE_API_URL || 'http://localhost:8000'}</p><button className="btn-secondary" onClick={toggleDarkMode}>Toggle Dark Mode: {darkMode?'On':'Off'}</button><p className="text-sm text-slate-500">Konfigurasi Supabase dan API disimpan di file .env frontend.</p></div>; }

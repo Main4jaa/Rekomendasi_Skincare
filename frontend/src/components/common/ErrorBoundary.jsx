@@ -1,0 +1,2 @@
+import React from 'react';
+export default class ErrorBoundary extends React.Component { constructor(p){super(p); this.state={hasError:false,error:null};} static getDerivedStateFromError(error){return{hasError:true,error};} render(){ if(this.state.hasError) return <div className="card border-red-200 bg-red-50 text-red-700">Terjadi kesalahan UI: {String(this.state.error?.message || this.state.error)}</div>; return this.props.children; }}

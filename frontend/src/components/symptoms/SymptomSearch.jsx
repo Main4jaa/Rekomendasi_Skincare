@@ -1,0 +1,1 @@
+export default function SymptomSearch({ value, onChange }){ return <input className="input" placeholder="Cari gejala, kode, atau kategori..." value={value} onChange={e=>onChange(e.target.value)} />; }

@@ -1,0 +1,1 @@
+import PatientHistory from '../components/patient/PatientHistory'; export default function HistoryPage(){ return <PatientHistory/>; }

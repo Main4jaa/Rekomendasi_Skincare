@@ -1,0 +1,5 @@
+import { NavLink } from 'react-router-dom';
+import { Home, History, Info, Settings, Activity } from 'lucide-react';
+import { useUiStore } from '../../store/uiStore';
+const links=[['/','Home',Home],['/diagnosis','Diagnosis',Activity],['/history','History',History],['/about','About',Info],['/settings','Settings',Settings]];
+export default function Sidebar(){ const { sidebarOpen }=useUiStore(); return <aside className={`${sidebarOpen?'w-64':'w-0 md:w-20'} overflow-hidden border-r border-slate-200 bg-white transition-all dark:border-slate-800 dark:bg-slate-950`}><nav className="space-y-2 p-3">{links.map(([to,label,Icon])=><NavLink key={to} to={to} className={({isActive})=>`flex items-center gap-3 rounded-xl px-3 py-2 font-medium ${isActive?'bg-primary-50 text-primary-700 dark:bg-primary-950 dark:text-primary-100':'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800'}`}><Icon size={20}/><span className={`${sidebarOpen?'inline':'hidden'}`}>{label}</span></NavLink>)}</nav></aside>; }
